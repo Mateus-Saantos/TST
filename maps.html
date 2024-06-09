@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Localização</title>
+    <link id="stylesheet" rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+</head>
+
+<body>
+    <nav>
+        <ul class="menu">
+            <li id="list"><a href="cadastro.html">Cadastro</a></li>
+            <li id="list">
+                <label class="switch">
+                <input type="checkbox" id="toggle">
+                <span class="slider"></span>
+            </li>
+        </ul>
+    </nav>
+    <div class="container" style="width: 1000px; margin-top: 50px;">
+        <form id="pesquisaForm">
+            <h2>Pesquisar Endereço</h2>
+            <label for="nomeConsulta">Endereço</label>
+            <input type="text" id="nomeConsulta" name="nomeConsulta">
+        </form>
+        <section id="map"
+        style="box-shadow: inset black 0 0 15px -1px; border-radius: 25px; width: 100%; height: 400px; margin: 20px 0;">
+    </section>
+</div>
+    <script src="map-setup.js"></script>
+    <script src="scriptLimparCampos.js"></script>
+</body>
+
+</html>
