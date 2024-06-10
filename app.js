@@ -19,9 +19,9 @@ const storage = firebase.storage(); //inicializa o storage
 
 // Função para enviar dados para o Firebase
 function enviarDadosParaFirebase() {
-    const nomeAluno = document.getElementById('nome').value;
-    const turma = document.getElementById('turma').value;
-    const curso = document.getElementById('curso').value;
+    const nomeAluno = document.getElementById('nome').value.toLowerCase();
+    const turma = document.getElementById('turma').value.toLowerCase();
+    const curso = document.getElementById('curso').value.toLowerCase();
     const imagem = document.getElementById('imagem').files[0]; // Obtém o arquivo de 
     imagem
     if (imagem) {
@@ -55,7 +55,7 @@ function enviarDadosParaFirebase() {
 }
 
 function consultarAlunoPorNome() {
-    const nome = document.getElementById('nomeConsulta').value.trim();
+    const nome = document.getElementById('nomeConsulta').value.trim().toLowerCase();
     const alunosRef = database.ref('alunos');
     alunosRef.orderByChild('nomeAluno').equalTo(nome).once('value', snapshot => {
         const data = snapshot.val();
